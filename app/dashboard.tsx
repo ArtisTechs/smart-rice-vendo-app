@@ -180,7 +180,6 @@ export default function Dashboard() {
             onCancel={() => setShowPicker(null)}
           />
 
-          {/* Side Sheet */}
           {isMenuVisible && (
             <Pressable
               onPress={() => setMenuVisible(false)}
@@ -294,13 +293,10 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     paddingTop: 20,
     paddingHorizontal: 20,
-    borderTopRightRadius: 20,
-    borderBottomRightRadius: 20,
     elevation: 5,
     shadowColor: "#000",
     shadowOffset: { width: 2, height: 0 },
-    shadowOpacity: 0.2,
-    shadowRadius: 4,
+    shadowOpacity: 0.5,
     zIndex: 1000,
   },
   menuTitle: {
