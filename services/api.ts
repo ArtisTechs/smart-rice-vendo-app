@@ -1,7 +1,8 @@
 import axios from "axios";
 import moment from "moment";
 
-const API_BASE_URL = "http://192.168.100.21:8080/api";
+// const API_BASE_URL = "http://192.168.100.21:8080/api";
+const API_BASE_URL = "https://smart-rice-dispenser-production.up.railway.app/api";
 
 export const getMachineByCode = async (code: string) => {
   try {

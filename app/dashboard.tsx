@@ -67,9 +67,17 @@ export default function Dashboard() {
     setLoading(true);
     try {
       const data = await getTransactionsByDateRange(fromDate, toDate);
-      setTransactions(data);
+
+      // Sort the transactions from newest to oldest
+      const sorted = data.sort(
+        (a: Transaction, b: Transaction) =>
+          new Date(b.dateTime).getTime() - new Date(a.dateTime).getTime()
+      );
+
+      setTransactions(sorted);
+
       setTotalIncome(
-        data.reduce((sum: number, t: Transaction) => sum + t.payment, 0)
+        sorted.reduce((sum: number, t: Transaction) => sum + t.payment, 0)
       );
     } catch (e) {
       console.error(e);
